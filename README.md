@@ -23,7 +23,31 @@ and some demo images are here's
 <mark> Video Size: 20 MB </mark>
 
 # Some Screenshots Demo
-1. SignUp
-<img style='width:40%;' src='demo 1.png'>
-2. DashBoard
-<img style='width:40%;' src='demo 2.png'>
+
+
+
+
+<table style='border:none;width:100%'>
+  <td style='width:50%;'>
+    1. SignUp
+   <img style='width:100%;' src='demo 1.png'>
+  </td>
+  <td style='width:50%;'>
+    2. DashBoard
+   <img style='width:100%;' src='demo 2.png'>
+  </td>
+</table>
+
+<table style='border:none;width:100%'>
+  <td style='width:50%;'>
+    3. Invest Page
+   <img style='width:100%;' src='demo 3.png'>
+  </td>
+  <td style='width:50%;'>
+    4. WithDrawals
+   <img style='width:100%;' src='demo 4.png'>
+  </td>
+</table>
+
+5. Affliate Page
+<img style='width:40%;' src='demo 5.png'>
