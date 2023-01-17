@@ -40,7 +40,7 @@ and some demo images are here's
 
 <table style='border:none;width:100%'>
   <td style='width:50%;'>
-    3. Invest Page
+    3. Investment Page
    <img style='width:100%;' src='demo 3.png'>
   </td>
   <td style='width:50%;'>
