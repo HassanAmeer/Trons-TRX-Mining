@@ -1,0 +1,286 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Jul 17, 2022 at 02:54 PM
+-- Server version: 5.6.38
+-- PHP Version: 7.4.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `trx1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ghstng`
+--
+
+CREATE TABLE `ghstng` (
+  `stngid` int(250) NOT NULL,
+  `bonus_percent` int(100) NOT NULL DEFAULT '0',
+  `regbonus` int(11) NOT NULL DEFAULT '0',
+  `free_mining_perc` int(20) NOT NULL DEFAULT '5',
+  `min_deposite` int(100) DEFAULT '5',
+  `withdrawoff` int(1) NOT NULL DEFAULT '0',
+  `tglink` varchar(150) DEFAULT NULL,
+  `applink` varchar(150) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `admin` varchar(250) DEFAULT NULL,
+  `pass` varchar(250) DEFAULT NULL,
+  `maarquee` varchar(150) DEFAULT NULL,
+  `fake_profite` int(13) NOT NULL DEFAULT '0',
+  `fake_members` int(13) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ghstng`
+--
+
+INSERT INTO `ghstng` (`stngid`, `bonus_percent`, `regbonus`, `free_mining_perc`, `min_deposite`, `withdrawoff`, `tglink`, `applink`, `email`, `admin`, `pass`, `maarquee`, `fake_profite`, `fake_members`) VALUES
+(1, 7, 100, 5, 5, 0, 'https://telegram.org/dl', 'https://play.google.com', 'maarkhoor5@gmail.com', 'admin', 'd16e21683e56d9836c2a3ff5a45991ac', '  Now the minimum investment is 5 TRX', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `req_withdrawl`
+--
+
+CREATE TABLE `req_withdrawl` (
+  `id` int(11) NOT NULL,
+  `from_user` varchar(150) DEFAULT NULL,
+  `req_withdraw` float NOT NULL,
+  `wallet` varchar(250) DEFAULT NULL,
+  `From_Account` varchar(100) NOT NULL DEFAULT 'basic',
+  `basic_bal` float NOT NULL DEFAULT '0',
+  `promo_bal` float NOT NULL DEFAULT '0',
+  `total_out` float NOT NULL DEFAULT '0',
+  `total_ref` int(50) DEFAULT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` int(1) DEFAULT NULL,
+  `status_paid` varchar(100) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `req_withdrawl`
+--
+
+INSERT INTO `req_withdrawl` (`id`, `from_user`, `req_withdraw`, `wallet`, `From_Account`, `basic_bal`, `promo_bal`, `total_out`, `total_ref`, `time`, `status`, `status_paid`) VALUES
+(16, '111113333', 190, 'Tranekfnwjdiwo', 'basic', 633, 95, 0, 7, '2022-05-24 15:25:55', 0, 'fa fa-history text-muted');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tid`
+--
+
+CREATE TABLE `tid` (
+  `id` int(100) NOT NULL,
+  `trid` varchar(150) NOT NULL DEFAULT '0',
+  `byusr` varchar(100) NOT NULL DEFAULT '0',
+  `trx` float NOT NULL DEFAULT '0',
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trading`
+--
+
+CREATE TABLE `trading` (
+  `id` int(100) NOT NULL,
+  `byusr` varchar(250) NOT NULL DEFAULT 'not1',
+  `bns` float NOT NULL DEFAULT '0',
+  `status` int(2) NOT NULL DEFAULT '0',
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `trading`
+--
+
+INSERT INTO `trading` (`id`, `byusr`, `bns`, `status`, `time`) VALUES
+(1, '03097676179', 11.4038, 1, '2022-07-13 07:06:37'),
+(2, '03097676179', 11.4038, 1, '2022-07-13 07:06:37'),
+(3, '03097676179', 11.4038, 1, '2022-07-13 07:06:37'),
+(4, '03097676179', 11.4038, 1, '2022-07-13 07:10:11'),
+(5, '03097676179', 11.4038, 1, '2022-07-13 07:10:11'),
+(6, '03097676179', 11.4038, 1, '2022-07-14 07:10:11'),
+(7, '03097676179', 13.6846, 1, '2022-07-14 08:31:11'),
+(352712, '3', 5, 1, '2022-07-17 12:35:07'),
+(352711, '3', 5, 1, '2022-07-17 12:35:07'),
+(352710, '3', 5, 1, '2022-07-17 12:35:07'),
+(352709, '03097676179', 21.3862, 1, '2022-07-17 12:34:02'),
+(352708, '03097676179', 20.3678, 1, '2022-07-16 11:14:55'),
+(352707, '2', 5, 1, '2022-07-15 15:22:35'),
+(352706, '03097676179', 19.3979, 1, '2022-07-15 12:30:20'),
+(352705, '03097676179', 18.4742, 1, '2022-07-14 04:16:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userslog`
+--
+
+CREATE TABLE `userslog` (
+  `uid` int(250) NOT NULL,
+  `usrphone` varchar(150) DEFAULT NULL,
+  `securitypass` varchar(150) DEFAULT NULL,
+  `upass` varchar(150) DEFAULT NULL,
+  `basic_acc` int(2) NOT NULL DEFAULT '0',
+  `prom_acc` int(2) NOT NULL DEFAULT '0',
+  `basic_acc_font` varchar(100) NOT NULL DEFAULT 'fa fa-history text-danger',
+  `prom_acc_font` varchar(100) NOT NULL DEFAULT 'fa fa-history text-danger',
+  `ip` varchar(100) NOT NULL DEFAULT '0',
+  `regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `regtime` int(200) NOT NULL DEFAULT '0',
+  `clctime` int(100) NOT NULL DEFAULT '0',
+  `endpkgtime` int(200) NOT NULL DEFAULT '0',
+  `status` int(2) NOT NULL DEFAULT '0',
+  `active_bns` int(10) DEFAULT '0',
+  `totalsum` float DEFAULT '0',
+  `sum` float NOT NULL,
+  `totalsumout` float NOT NULL,
+  `sumout` float NOT NULL,
+  `refby` int(100) DEFAULT '0',
+  `totalref` int(100) DEFAULT '0',
+  `reflevel_1` int(50) DEFAULT NULL,
+  `reflevel_2` int(50) DEFAULT NULL,
+  `reflevel_3` int(50) DEFAULT NULL,
+  `refbonus` float DEFAULT '0',
+  `user_ban` int(1) NOT NULL DEFAULT '0',
+  `bantxt` varchar(50) DEFAULT 'fas fa-user-tie text-success',
+  `mining_status` int(2) NOT NULL DEFAULT '0',
+  `team_status` int(2) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `userslog`
+--
+
+INSERT INTO `userslog` (`uid`, `usrphone`, `securitypass`, `upass`, `basic_acc`, `prom_acc`, `basic_acc_font`, `prom_acc_font`, `ip`, `regdate`, `regtime`, `clctime`, `endpkgtime`, `status`, `active_bns`, `totalsum`, `sum`, `totalsumout`, `sumout`, `refby`, `totalref`, `reflevel_1`, `reflevel_2`, `reflevel_3`, `refbonus`, `user_ban`, `bantxt`, `mining_status`, `team_status`) VALUES
+(38, '03097676179', 't', '81d1a81b2cc325e32ba1983d73d85690', 0, 1, 'fa fa-history text-danger', 'fa fa-check   text-success', '::1', '2022-06-25 13:43:16', 1657433797, 7, 1662509923, 0, 5, 100, 100, 0, 449.11, 51, 0, 52, 53, NULL, 60, 0, 'fas fa-user-tie  text-success', 0, 0),
+(53, '4', '4', '7488b072f817428c95041dedfae7d3c2', 0, 0, 'fa fa-history text-danger', 'fa fa-history text-danger', '0', '2022-07-14 13:13:52', 1657804432, 0, 1662880432, 0, 5, 0, 100, 0, 100, 51, 0, 46, 38, NULL, 0, 0, 'fas fa-user-tie  text-success', 0, 0),
+(54, '5', '5', '72b9a3c47a328fcaf24722442a74dd97', 0, 0, 'fa fa-history text-danger', 'fa fa-history text-danger', '0', '2022-07-14 13:14:13', 1657804453, 0, 1662880453, 0, 5, 0, 100, 0, 100, 52, 0, 38, 0, NULL, 0, 0, 'fas fa-user-tie  text-success', 0, 0),
+(51, '2', '2', 'dca1117a4a9933499a4a870b4190065a', 0, 0, 'fa fa-history text-danger', 'fa fa-history text-danger ', '0', '2022-07-14 13:12:57', 1657804377, 1, 1662880377, 0, 5, 0, 100, 0, 100, 46, 0, 38, 0, NULL, 0, 0, 'fas fa-user-tie  text-success', 0, 0),
+(52, '3', '3', 'a36abd601b784b2ece294786ee83e834', 0, 0, 'fa fa-history text-danger', 'fa fa-history text-danger ', '0', '2022-07-14 13:13:22', 1657804402, 3, 1662880402, 0, 5, 0, 100, 0, 100, 38, 0, 0, 0, NULL, 0, 0, 'fas fa-user-tie  text-success', 0, 0),
+(46, '1', '1', '7055eced15538bfb7c07f8a5b28fc5d0', 0, 0, 'fa fa-history text-danger', 'fa fa-history text-danger', '0', '2022-07-14 11:49:13', 1657799353, 0, 1662875353, 0, 5, 0, 100, 0, 100, 38, 0, 0, 0, NULL, 0, 0, 'fas fa-user-tie  text-success', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usrsnotify`
+--
+
+CREATE TABLE `usrsnotify` (
+  `id` int(100) NOT NULL,
+  `ifbyadmin` varchar(20) NOT NULL DEFAULT '0',
+  `byusr` varchar(100) DEFAULT NULL,
+  `msg` varchar(250) DEFAULT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `usrsnotify`
+--
+
+INSERT INTO `usrsnotify` (`id`, `ifbyadmin`, `byusr`, `msg`, `time`) VALUES
+(1, '0', '03097676179', 'test1', '2022-06-26 11:45:00'),
+(4, 'admin', '000011112', 'test', '2022-07-15 10:39:23');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ghstng`
+--
+ALTER TABLE `ghstng`
+  ADD PRIMARY KEY (`stngid`);
+
+--
+-- Indexes for table `req_withdrawl`
+--
+ALTER TABLE `req_withdrawl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tid`
+--
+ALTER TABLE `tid`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `trading`
+--
+ALTER TABLE `trading`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `userslog`
+--
+ALTER TABLE `userslog`
+  ADD PRIMARY KEY (`uid`);
+
+--
+-- Indexes for table `usrsnotify`
+--
+ALTER TABLE `usrsnotify`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ghstng`
+--
+ALTER TABLE `ghstng`
+  MODIFY `stngid` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `req_withdrawl`
+--
+ALTER TABLE `req_withdrawl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `tid`
+--
+ALTER TABLE `tid`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `trading`
+--
+ALTER TABLE `trading`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=352713;
+
+--
+-- AUTO_INCREMENT for table `userslog`
+--
+ALTER TABLE `userslog`
+  MODIFY `uid` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `usrsnotify`
+--
+ALTER TABLE `usrsnotify`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
